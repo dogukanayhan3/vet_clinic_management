@@ -1,0 +1,188 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #2c3e50; /* Deep blue text */
+}
+
+h1 {
+  color: black;
+}
+
+h2, h3 {
+  color: black; /* Vibrant blue for headings */
+  text-align: center;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Arrange elements in a column */
+  align-items: center; /* Center align the form elements */
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White form background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+input, textarea, button {
+  width: 100%; /* Ensure the elements take full width of the form */
+  max-width: 400px; /* Limit the width of input, textarea, and button */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #dfe6e9; /* Light grey border */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+button {
+  background-color: #3498db; /* Blue button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #176497; /* Darker blue on hover */
+}
+
+/* Navbar styles */
+nav {
+  display: flex;
+  justify-content: center;  /* Center the buttons horizontally */
+  gap: 10px;                /* Add space between the buttons */
+  padding: 5px 0;           /* Add vertical padding to the navbar */
+}
+
+nav button {
+  background-color: transparent; /* No background color by default */
+  color: black;                  /* Black text by default */
+  border: none;                  /* Remove border */
+  cursor: pointer;
+  padding: 10px 20px;            /* Base padding for buttons */
+  font-size: 1rem;               /* Font size */
+  position: relative;            /* Enable pseudo-element positioning */
+  overflow: hidden;              /* Hide overflow for smooth animation */
+  transition: color 0.3s ease;   /* Smooth text color transition */
+}
+
+nav button::before {
+  content: "";                    /* Empty content for the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: -100%;                    /* Start outside the button on the left */
+  width: 100%;                    /* Full width of the button */
+  height: 100%;                   /* Full height of the button */
+  background-color: #3498db;      /* Blue background for hover effect */
+  transition: left 0.3s ease;     /* Smooth transition */
+  z-index: -1;                    /* Place behind the text */
+}
+
+nav button:hover::before {
+  left: 0;                        /* Slide the background in from the left */
+}
+
+nav button:hover {
+  color: white;                   /* Change text color on hover */
+}
+
+/* Optional for extra flair */
+nav button:hover {
+  transform: scale(1.1);          /* Slightly enlarge the button */
+  transition: transform 0.3s ease, color 0.3s ease; /* Add scale animation */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ecf0f1; /* Light grey item background */
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li:nth-child(even) {
+  background-color: #dfe6e9; /* Alternating row colors */
+}
+
+/* Header Style */
+header {
+  background-color: #3498dbab; /* Blue header */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  form, ul {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  input, textarea, button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Authentication Container */
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Tabs for Login and Register */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.auth-tabs button {
+  background-color: #ecf0f1; /* Light grey */
+  color: #3498db; /* Blue text */
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 0.3s ease;
+}
+
+.auth-tabs button.active {
+  background-color: #3498db; /* Blue background for active tab */
+  color: white;
+}
+
+.auth-tabs button:hover {
+  background-color: #1a6292;
+  color: white;
+}
